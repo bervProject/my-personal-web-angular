@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+$blue: rgb(0, 89, 255);
+$primary: $blue;
+$footer-background-color: rgb(0, 204, 255);
+$footer-color: true;
+
+@import "../node_modules/bulma/bulma.sass";
