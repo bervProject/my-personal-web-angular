@@ -19,7 +19,7 @@ jobs:
     - name: yarn, yarn build
       run: |
         yarn
-        yarn build
+        yarn build --base-href /${{ github.event.repository.name }}/
       env:
         CI: true
     - name: Deploy 🚀
