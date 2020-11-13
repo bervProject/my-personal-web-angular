@@ -19,7 +19,7 @@ jobs:
     - name: yarn, yarn build
       run: |
         yarn
-        yarn build --base-href /${{ github.event.repository.name }}/
+        yarn build --prod --output-path docs --base-href /${{ github.event.repository.name }}/
       env:
         CI: true
     - name: Deploy 🚀
@@ -27,4 +27,4 @@ jobs:
       if: ${{ matrix.node-version == '12.x' && github.event_name == 'push' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist # The folder the action should deploy.        
+        publish_dir: ./docs # The folder the action should deploy.        
