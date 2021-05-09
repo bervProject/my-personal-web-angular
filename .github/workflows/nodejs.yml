@@ -9,11 +9,11 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: [14.x, 16.x]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
     - name: yarn, yarn build
@@ -24,7 +24,7 @@ jobs:
         CI: true
     - name: Deploy 🚀
       uses: peaceiris/actions-gh-pages@v3
-      if: ${{ matrix.node-version == '12.x' && github.event_name == 'push' }}
+      if: ${{ matrix.node-version == '14.x' && github.event_name == 'push' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs # The folder the action should deploy.        
+        publish_dir: ./docs # The folder the action should deploy.
