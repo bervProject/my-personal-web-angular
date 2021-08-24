@@ -21,12 +21,17 @@
       <a class="navbar-item" routerLink="/education" routerLinkActive="active">
         Education
       </a>
+      <a class="navbar-item" routerLink="/profile" routerLinkActive="active">
+        Profile
+      </a>
+      <a class="navbar-item" *ngIf="!loginDisplay" (click)="login()">Login</a>
+      <a class="navbar-item" *ngIf="loginDisplay" (click)="logout()">Logout</a>
     </div>
   </div>
 </nav>
 <section class="section">
   <div class="container">
-    <router-outlet></router-outlet>
+    <router-outlet *ngIf="!isIframe"></router-outlet>
   </div>
 </section>
 <footer class="footer">
