@@ -19,7 +19,7 @@
     "@angular/platform-browser": "^13.1.2",
     "@angular/platform-browser-dynamic": "^13.1.2",
     "@angular/router": "^13.1.2",
-    "@azure/msal-angular": "^2.0.2",
+    "@azure/msal-angular": "^2.0.6",
     "@azure/msal-browser": "^2.20.0",
     "bulma": "^0.9.3",
     "rxjs": "~6.6.7",
