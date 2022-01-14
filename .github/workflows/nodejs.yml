@@ -1,17 +1,12 @@
 name: Node CI
-
 on:
   push:
     branches: [ main ]
   pull_request:
-    # The branches below must be a subset of the branches above
     branches: [ main ]
-
 jobs:
   build:
-
     runs-on: ubuntu-20.04
-
     strategy:
       matrix:
         node-version: [14.x, 16.x]
