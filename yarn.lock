@@ -239,10 +239,10 @@
   resolved "https://registry.npmjs.org/@assemblyscript/loader/-/loader-0.10.1.tgz#70e45678f06c72fa2e350e8553ec4a4d72b92e06"
   integrity sha512-H71nDOOL8Y7kWRLqf6Sums+01Q5msqBW2KhDUTemh1tvY04eSkSXrK0uj/4mmY0Xr16/3zyZmsrxN7CKuRbNRg==
 
-"@azure/msal-angular@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@azure/msal-angular/-/msal-angular-2.1.0.tgz#c91e5cf9fea85aab807b4d69dd2ef5d24f74732f"
-  integrity sha512-699Rz7SC1QP1grFAd5uzlEldEmHBNIQwHxOizkHhJo/uPncmmWsQhjcqzN/DRZWj27Dr6TzhIp56Hs6qPaHfNw==
+"@azure/msal-angular@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@azure/msal-angular/-/msal-angular-2.1.2.tgz#90c82cbded794669dd0ba93a63ae7d9c4e3da549"
+  integrity sha512-rnwxklLYhjdZhHPjth3PUwQAFR9VFeqwaaIPMvXxQwuRiDC9eifp1lAyXa1T8VX1iANgC11BSBm2Lp0SmBOfqg==
   dependencies:
     tslib "^2.0.0"
 
