@@ -7,6 +7,11 @@ updates:
     time: "08:00"
     timezone: Asia/Jakarta
   open-pull-requests-limit: 100
+  groups:
+    angular:
+      patterns:
+        - "@angular/*"
+        - "@angular-devkit/*"
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
