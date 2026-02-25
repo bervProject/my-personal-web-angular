@@ -129,5 +129,8 @@
         }
       }
     }},
-  "defaultProject": "my-personal-web-angular"
+  "defaultProject": "my-personal-web-angular",
+  "cli": {
+    "analytics": "66f50077-580e-4643-99fa-232380abbd81"
+  }
 }

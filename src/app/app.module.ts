@@ -7,9 +7,9 @@ import { EducationComponent } from './education/education.component';
 import { HomeComponent } from './home/home.component';
 
 import { MsalGuard, MsalInterceptor, MsalModule, MsalRedirectComponent } from '@azure/msal-angular';
-import { InteractionType, PublicClientApplication } from '@azure/msal-browser';
+import { InteractionType, PublicClientApplication, BrowserCacheLocation } from '@azure/msal-browser';
 import { ProfileComponent } from './profile/profile.component';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient } from "@angular/common/http";
 
 const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
 
@@ -23,7 +23,6 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     MsalModule.forRoot(new PublicClientApplication({
       auth: {
         clientId: 'a1b99b18-caf6-4e5d-ab28-4456f87a9ffc',
@@ -31,8 +30,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
         redirectUri: 'http://localhost:4200'
       },
       cache: {
-        cacheLocation: 'localStorage',
-        storeAuthStateInCookie: isIE,
+        cacheLocation: BrowserCacheLocation.LocalStorage
       }
     }),
       {
@@ -49,6 +47,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
       })
   ],
   providers: [
+    provideHttpClient(),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MsalInterceptor,
