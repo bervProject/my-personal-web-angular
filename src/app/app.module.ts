@@ -9,9 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { MsalGuard, MsalInterceptor, MsalModule, MsalRedirectComponent } from '@azure/msal-angular';
 import { InteractionType, PublicClientApplication, BrowserCacheLocation } from '@azure/msal-browser';
 import { ProfileComponent } from './profile/profile.component';
-import { HTTP_INTERCEPTORS, provideHttpClient } from "@angular/common/http";
-
-const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigator.userAgent.indexOf('Trident/') > -1;
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -47,7 +45,7 @@ const isIE = window.navigator.userAgent.indexOf('MSIE ') > -1 || window.navigato
       })
   ],
   providers: [
-    provideHttpClient(),
+    provideHttpClient(withInterceptorsFromDi()),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MsalInterceptor,
