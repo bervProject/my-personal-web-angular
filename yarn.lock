@@ -389,17 +389,17 @@
   dependencies:
     tslib "^2.3.0"
 
-"@azure/msal-browser@^5.3.0":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@azure/msal-browser/-/msal-browser-5.3.0.tgz#f154abf5e02714c4ed233f427abc1651714891c2"
-  integrity sha512-WqIN2GJe6H8OfmEiXjf8y+N0LedO6lkE3JeLZqEVurvoHoHltpl3gMyfKPycAfOgNMMmlukB6XUhbXDRRSdhEQ==
+"@azure/msal-browser@^5.6.3":
+  version "5.6.3"
+  resolved "https://registry.yarnpkg.com/@azure/msal-browser/-/msal-browser-5.6.3.tgz#dc90be97d0a1c18dbc9320e9e67edc3296977ea9"
+  integrity sha512-sTjMtUm+bJpENU/1WlRzHEsgEHppZDZ1EtNyaOODg/sQBtMxxJzGB+MOCM+T2Q5Qe1fKBrdxUmjyRxm0r7Ez9w==
   dependencies:
-    "@azure/msal-common" "16.1.0"
+    "@azure/msal-common" "16.4.1"
 
-"@azure/msal-common@16.1.0":
-  version "16.1.0"
-  resolved "https://registry.yarnpkg.com/@azure/msal-common/-/msal-common-16.1.0.tgz#271e56d450de5f0973d303e09ed4de0427255152"
-  integrity sha512-uiX0ChrRFbreXlPlDR8LwHKmZpJudDAr124iNWJKJ+b7MJUWXmvVU3idSi/c5lk1FwLVZeMxhQir3BGdV09I+g==
+"@azure/msal-common@16.4.1":
+  version "16.4.1"
+  resolved "https://registry.yarnpkg.com/@azure/msal-common/-/msal-common-16.4.1.tgz#1d50c588277ac97a823191302323fc60c9a83574"
+  integrity sha512-Bl8f+w37xkXsYh7QRkAKCFGYtWMYuOVO7Lv+BxILrvGz3HbIEF22Pt0ugyj0QPOl6NLrHcnNUQ9yeew98P/5iw==
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.28.6", "@babel/code-frame@^7.29.0":
   version "7.29.0"
