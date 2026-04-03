@@ -1,4 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { MsalBroadcastService, MsalGuardConfiguration, MsalService, MSAL_GUARD_CONFIG } from '@azure/msal-angular';
 import { InteractionStatus, RedirectRequest } from '@azure/msal-browser';
 import { Subject } from 'rxjs';
@@ -6,10 +7,12 @@ import { filter, takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'my-personal-web-angular';
   isIframe = false;
   loginDisplay = false;
@@ -19,7 +22,7 @@ export class AppComponent implements OnInit {
     @Inject(MSAL_GUARD_CONFIG) private msalGuardConfig: MsalGuardConfiguration,
     private broadcastService: MsalBroadcastService,
     private authService: MsalService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.isIframe = window !== window.parent && !window.opener;
@@ -28,22 +31,16 @@ export class AppComponent implements OnInit {
         filter((status: InteractionStatus) => status === InteractionStatus.None),
         takeUntil(this._destroying$)
       )
-      .subscribe(() => {
-        this.setLoginDisplay();
-      });
-    // Get all "navbar-burger" elements
+      .subscribe(() => this.setLoginDisplay());
+
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    // Check if there are any navbar burgers
     if ($navbarBurgers.length > 0) {
-      // Add a click event on each of them
-      $navbarBurgers.forEach(el => {
+      $navbarBurgers.forEach((el: HTMLElement) => {
         el.addEventListener('click', () => {
-          // Get the target from the "data-target" attribute
-          const target = el.dataset.target;
+          const target = (el as any).dataset.target;
           const $target = document.getElementById(target);
-          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
           el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
+          $target?.classList.toggle('is-active');
         });
       });
     }
@@ -57,10 +54,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  logout() { // Add log out function here
-    this.authService.logoutRedirect({
-      postLogoutRedirectUri: 'http://localhost:4200'
-    });
+  logout() {
+    this.authService.logoutRedirect({ postLogoutRedirectUri: 'http://localhost:4200' });
   }
 
   setLoginDisplay() {
