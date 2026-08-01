@@ -370,10 +370,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@azure/msal-angular@^5.2.5":
-  version "5.2.5"
-  resolved "https://registry.yarnpkg.com/@azure/msal-angular/-/msal-angular-5.2.5.tgz#5abe62fbba17ac016e9de5282d1d48c5b87b4d9a"
-  integrity sha512-DydgsUKG4UizQWk1L3a95a/yKAS8Auy7V1VFXdAi3M1wEhddjMUWtCX3udo+SVrusUxlX4v2lczWvaOFQGRLlw==
+"@azure/msal-angular@^5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@azure/msal-angular/-/msal-angular-5.3.1.tgz#bb5e0e2dcddc2bff184b4ce65634be7ae738c713"
+  integrity sha512-Tg591W1DmDQZwaCN/QlI/hOpza2p4QlognEcu0O5XCw6c5JxlP7ylCs8fCMNZHb+f14LnPmdqOwlHPOxGjlrxA==
   dependencies:
     tslib "^2.3.0"
 
